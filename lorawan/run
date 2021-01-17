@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 rfm9x_check.py
