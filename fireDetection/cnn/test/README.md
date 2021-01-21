@@ -1,1 +1,3 @@
-This is a test to run a keras CNN on a Raspberry Pi 4
+This is a test to run a keras CNN on a Raspberry Pi 4\
+It seems that rpi4 supports different version of tensorflow than\
+on Google Collab...
