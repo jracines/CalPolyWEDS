@@ -16,9 +16,12 @@ def main():
     camera.framerate = 15
     camera.rotation = 180
     sleep(5)
-    camera.capture('/home/pi/Desktop/sp/CalPolyWEDS/camera/pyCamTest.jpg')
+    camera.capture('/home/pi/Desktop/sp/CalPolyWEDS/camera/fireDetInput.jpg')
     camera.stop_preview()
-    # print("hello!")
+
+    img = cv.imread("fireDetInput.jpg", cv.IMREAD_COLOR) 
+    greyImg = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    cv.imwrite("output.jpg", greyImg)
 
 
 if __name__ == "__main__":
