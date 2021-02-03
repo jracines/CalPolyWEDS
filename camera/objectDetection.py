@@ -1,9 +1,16 @@
 from __future__ import print_function
 import cv2 as cv
 import argparse
+from picamera.array import PiRGBArray
+from picamera import PiCamera
+import time
+import numpy as np
 
 def detectAndDisplay(frame):
-    frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    # frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    print(type(frame))
+    frame_gray = cv.cvtColor(np.array(frame), cv.COLOR_BGR2GRAY)
+
     frame_gray = cv.equalizeHist(frame_gray)
 
     #-- Detect faces
@@ -20,8 +27,8 @@ def detectAndDisplay(frame):
             radius = int(round((w2 + h2)*0.25))
             frame = cv.circle(frame, eye_center, radius, (255, 0, 0 ), 4)
 
-    # cv.imshow('Capture - Face detection', frame)
-    cv.imwrite("haarout.jpg", frame)
+    cv.imshow('Capture - Face detection', frame)
+    # cv.imwrite("haarout.jpg", frame)
 
 parser = argparse.ArgumentParser(description='Code for Cascade Classifier tutorial.')
 parser.add_argument('--face_cascade', help='Path to face cascade.', default='opencv/data/haarcascades/haarcascade_frontalface_alt.xml')
@@ -43,20 +50,46 @@ if not eyes_cascade.load(cv.samples.findFile(eyes_cascade_name)):
     print('--(!)Error loading eyes cascade')
     exit(0)
 
-camera_device = args.camera
+# camera_device = args.camera
 #-- 2. Read the video stream
-cap = cv.VideoCapture(camera_device)
-if not cap.isOpened:
-    print('--(!)Error opening video capture')
-    exit(0)
+# cap = cv.VideoCapture(camera_device)
+# if not cap.isOpened:
+#     print('--(!)Error opening video capture')
+#     exit(0)
 
-while True:
-    ret, frame = cap.read()
+# Initlialize the camera and grab a reference to the raw camera capture
+camera = PiCamera()
+camera.resolution = (640, 480)
+camera.framerate = 32
+camera.rotation = 180
+rawCapture = PiRGBArray(camera, size=(640, 480))
+
+# Allow camera to warmup
+time.sleep(0.1)
+
+# Capture video from camera
+for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
+    # Gra raw NumPy array representing the image, then initialize the timestamp
+    image = frame.array
     if frame is None:
         print('--(!) No captured frame -- Break!')
         break
 
     detectAndDisplay(frame)
 
+    # Clear the stream in preparation for the next frame
+    rawCapture.truncate(0)
+
     if cv.waitKey(10) == 27:
         break
+
+# while True:
+#     ret, frame = cap.read()
+#     if frame is None:
+#         print('--(!) No captured frame -- Break!')
+#         break
+# 
+#     detectAndDisplay(frame)
+# 
+#     if cv.waitKey(10) == 27:
+#         break

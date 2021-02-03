@@ -7,6 +7,7 @@ import cv2
 camera = PiCamera()
 camera.resolution = (640, 480)
 camera.framerate = 32
+camera.rotation = 180
 rawCapture = PiRGBArray(camera, size=(640, 480))
 # allow the camera to warmup
 time.sleep(0.1)
