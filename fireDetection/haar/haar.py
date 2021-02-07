@@ -29,6 +29,16 @@ import numpy as np
 #     cv.imshow('Capture - Face detection', frame)
 #     # cv.imwrite("haarout.jpg", frame)
 
+
+def draw_rectangles(frame, rectangles):
+    line_color = (0,255,0)
+    line_type = cv.LINE_4
+    for(x, y, w, h) in rectangles:
+        top_left = (x,y)
+        bottom_right = (x+w, y+h)
+        cv.rectangle(frame, top_left, bottom_right, line_color, lineType=line_type)
+    return frame
+
 parser = argparse.ArgumentParser(description='Code for Cascade Classifier tutorial.')
 # parser.add_argument('--face_cascade', help='Path to face cascade.', default='opencv/data/haarcascades/haarcascade_frontalface_alt.xml')
 # parser.add_argument('--eyes_cascade', help='Path to eyes cascade.', default='opencv/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml')
@@ -56,6 +66,10 @@ if not cap.isOpened:
     print('--(!)Error opening video capture')
     exit(0)
 
+
+# Opening cascade classifier
+cascade_lighter = cv.CascadeClassifier('cascade/cascade.xml')
+
 loop_time = time()
 while True:
     ret, frame = cap.read()
@@ -63,14 +77,18 @@ while True:
         print('--(!) No captured frame -- Break!')
         break
 
-    cv.imshow('Capture - Face detection', frame)
-
     # Debug loop rate
     # print('FPS {}'.format(1 / (time() - loop_time)))
-    loop_time = time()
+    # loop_time = time()
 
     # detectAndDisplay(frame)
     
+    
+    # Testing out cascade classifier
+    rectangles = cascade_lighter.detectMultiScale(frame)
+    detection_image = draw_rectangles(frame, rectangles)
+    cv.imshow('Capture - Face detection', frame)
+
     key = cv.waitKey(1)
     if key == ord('q'):
         cv.destroyAllWindows()
@@ -81,3 +99,6 @@ while True:
     elif key == ord('d'):
         print("Saving negative image!")
         cv.imwrite('negative/{}.jpg'.format(loop_time), frame)
+    elif key == ord('g'):
+        print("Saving test image!")
+        cv.imwrite('tests/{}.jpg'.format(loop_time), frame)
