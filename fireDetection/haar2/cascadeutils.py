@@ -14,8 +14,6 @@ def generate_negative_description_file():
 #       generate_negative_description_file()
 #       quit()
 #
-# Opencv annotation Windows: C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_annotation.exe
-#
 # Generate positive description file:
 #   C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_annotation.exe --annotations=pos.txt --images=positive/
 #   Don't forget to go into pos.txt and change '\' to '/'
