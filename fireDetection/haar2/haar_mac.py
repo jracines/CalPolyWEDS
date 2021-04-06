@@ -1,8 +1,6 @@
 from __future__ import print_function
 import cv2 as cv
 import argparse
-from picamera.array import PiRGBArray
-from picamera import PiCamera
 from time import time
 import numpy as np
 
@@ -21,7 +19,7 @@ args = parser.parse_args()
 
 camera_device = args.camera
 
-#-- 2. Read the video stream (Raspberry Pi Camera)
+#-- 2. Read the v   ideo stream (Raspberry Pi Camera)
 # cap = cv.VideoCapture(camera_device)
 # if not cap.isOpened:
 #     print('--(!)Error opening video capture')
