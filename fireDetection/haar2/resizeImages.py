@@ -15,7 +15,7 @@ def main():
     height = 800
     dim = (width, height)
 
-    # Resize each image 
+    # Resize each image in the positive and negative folder
     # for img in pos_images:
     for img_file in pos_filenames:
         img = cv.imread(img_file)
