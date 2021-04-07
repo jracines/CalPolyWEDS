@@ -1,13 +1,9 @@
 - Done using 147 positive images and 65 negative images
 - Tried using 500 positive and negative samples
-- Actually runs using raw_footage.mp4
-    - Detects wildfires and occassionally smoke rather well.
-    - Could use this model as a baseline to improve from here
-    - Sometimes it doesn't detect the fire at all; undertrained
-
+- Detects too much; barely can run any video
  
- C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 6000 -precaldxBufSize 6000 -numPos 500 -numNeg 500 -numStages 12 -maxFalseAlarmRate 0.3 -minHitRate 0.999
- PARAMETERS:
+C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 6000 -precaldxBufSize 6000 -numPos 500 -numNeg 500 -numStages 12 -maxFalseAlarmRate 0.3 -minHitRate 0.999
+PARAMETERS:
 cascadeDirName: cascade/
 vecFileName: pos.vec
 bgFileName: neg.txt
