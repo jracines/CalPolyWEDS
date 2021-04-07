@@ -26,7 +26,7 @@ camera_device = args.camera
 #     exit(0)
 
 # Reading test raw video of wildfire
-cap = cv.VideoCapture("raw_footage.mp4")
+cap = cv.VideoCapture("footage/raw_footage_000.mp4")
 if not cap.isOpened():
     print("Cannot open capture")
     exit()
