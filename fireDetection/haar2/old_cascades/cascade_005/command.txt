@@ -1,6 +1,9 @@
 - Done using 147 positive images and 65 negative images
 - Tried using 500 positive and 250 negative samples; 5 stages
-- 
+- Seems still a bit too much to run. Maybe going down in stages isn't the move??
+- raw_footage_001.mp4
+    - Took several minutes actually open... okay way too many minutes
+    - I never got to actually open it 
  
 C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 6000 -precaldxBufSize 6000 -numPos 500 -numNeg 250 -numStages 5 -maxFalseAlarmRate 0.3 -minHitRate 0.999
 PARAMETERS:
