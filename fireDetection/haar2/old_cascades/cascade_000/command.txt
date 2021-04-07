@@ -1,4 +1,4 @@
-- This detected wildfires
+- This detected wildfires using raw_footag.mp4
 - However it detected a little bit of other things too
 - Done using 59 positive images and 32 negative images
 
