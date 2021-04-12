@@ -1,8 +1,13 @@
 - Done using 147 positive images and 65 negative images
 - Tried using 50 positive and 100 negative samples; 15 stages
-- Yeah this is not getting past stage 9 at all
+- stage 14: NEG count : acceptanceRatio    100 : 3.98409e-06
+    - this number is too small
 - Actually runs using raw_footage_001.mp4
-    - 
+    - runs pretty smoothly
+    - does not detect anything lol
+    - only detects wildfire when camera zooms into it
+    - severely under trained
+
 
 C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 10000 -precalcIdxBufSize 10000 -numPos 50 -numNeg 100 -numStages 15 -maxFalseAlarmRate 0.1 -minHitRate 0.999999 > old_cascades/cascade_010/command.txt
 
