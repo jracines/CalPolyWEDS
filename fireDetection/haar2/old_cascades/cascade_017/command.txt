@@ -9,6 +9,24 @@
     - still consistent
     - not overtrained
     - going to try with other footage
+- Actually runs using raw_footage_002.mp4
+    - runs pretty smoothly
+    - lighter skies
+    - seems a bit undertrained now
+    - 1st shot: rarely detects
+    - 2nd shot: detects a bit more
+    - 3rd shot: doesn't detect anything
+    - 4th shot: detects very little
+- Actually runs using raw_footage_003.mp4
+    - runs pretty smoothly
+    - seems a bit undertrained now
+    - 1st shot: detects a lot; darker skies
+    - 2nd shot: doesn't detect
+- Actually runs using raw_footage_004.mp4
+    - runs pretty smoothly
+    - seems a bit undertrained now
+    - doesn't detect when fire behind trees
+    - detects; darker skies
 
 PARAMETERS:
 cascadeDirName: cascade/
