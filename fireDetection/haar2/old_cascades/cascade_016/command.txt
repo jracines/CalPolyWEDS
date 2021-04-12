@@ -13,7 +13,7 @@
     - looks like the last stage was going to end up w a really small number
 
 - stage 14:
-- Actually runs using raw_footage_001.mp4
+- Does not run using raw_footage_001.mp4
     - 
 
 C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 10000 -precalcIdxBufSize 10000 -numPos 50 -numNeg 60 -numStages 15 -maxFalseAlarmRate 0.1 -minHitRate 0.9 > old_cascades/cascade_016/command.txt
