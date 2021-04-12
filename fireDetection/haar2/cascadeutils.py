@@ -34,7 +34,9 @@ def generate_negative_description_file():
 #
 #   Other parameters
 #       -precalcValBufSize:     gives more memory to help model train faster
+#       -numThreads:            number of threads during training, which may help speed it up
 #       -maxFalseAlarmRate:     keeps adding more layers until this value is reached
 #       -minHitRate:            keeps adding more layers until this value is reached    
+#       
 #
 #   C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 6000 -precalcIdxBufSize 6000 -numPos 45 -numNeg 500 -numStages 12 -maxFalseAlarmRate 0.3 -minHitRate 0.999
