@@ -1,8 +1,9 @@
 - Done using 147 positive images and 65 negative images
-- Tried using 100 positive and 500 negative samples; 15 stages
+- Tried using 50 positive and 500 negative samples; 15 stages
 - Yeah this is not getting past stage 9 at all
-- Actually runs using raw_footage_001.mp4
-    - 
+    - Tried running over night, but the model didn't not get past it
+    - Stopped training in the middle of stage 10
+- Does not run using raw_footage_001.mp4
 
 C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 10000 -precalcIdxBufSize 10000 -numPos 50 -numNeg 500 -numStages 15 -maxFalseAlarmRate 0.1 -minHitRate 0.999999 > old_cascades/cascade_009/command.txt 
 
