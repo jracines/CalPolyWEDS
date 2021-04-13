@@ -4,6 +4,9 @@
 - minHitRate        0.999999
 - stage 14:NEG count : acceptanceRatio    65 : 3.18941e-05
     - what we want
+- works best the closer the fire is 
+- works best if the surrounding is dark and there is a lot of contrast between that and the fire
+- this model is definitely undertrained
 - Actually runs using raw_footage_001.mp4
     - runs pretty smoothly
     - still consistent
