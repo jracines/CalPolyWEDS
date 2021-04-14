@@ -1,0 +1,3 @@
+[submodule "fireDetection/cnn/jackfrost/fireDetection/cnn/jackfrost/fire-detection"]
+	path = fireDetection/cnn/jackfrost/fireDetection/cnn/jackfrost/fire-detection
+	url = https://github.com/jackfrost1411/fire-detection

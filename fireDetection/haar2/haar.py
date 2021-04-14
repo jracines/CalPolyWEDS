@@ -28,7 +28,7 @@ camera_device = args.camera
 #     exit(0)
 
 # Reading test raw video of wildfire
-# cap = cv.VideoCapture("footage/raw_footage_000.mp4")
+cap = cv.VideoCapture("footage/raw_footage_023.mp4")
 
 
 if not cap.isOpened():
@@ -37,8 +37,8 @@ if not cap.isOpened():
 fps = cap.get(cv.CAP_PROP_FPS)
 
 # Opening cascade classifier
-cascade_wildfire = cv.CascadeClassifier('cascade/cascade.xml')
-# cascade_wildfire = cv.CascadeClassifier('old_cascades/cascade_010/cascade.xml')
+# cascade_wildfire = cv.CascadeClassifier('cascade/cascade.xml')
+cascade_wildfire = cv.CascadeClassifier('old_cascades/cascade_017/cascade.xml')
 
 # Resize each image to this width and height
 width = 480
