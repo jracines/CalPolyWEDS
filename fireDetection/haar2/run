@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm old_cascades/cascade_019/*.xml && C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data old_cascades/cascade_019/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 10000 -precalcIdxBufSize 10000 -numPos 80 -numNeg 100 -numStages 15 -maxFalseAlarmRate 0.15 -minHitRate 0.999999 > old_cascades/cascade_019/command.txt
+rm old_cascades/cascade_019/*.xml && C:/Users/Jayare/Downloads/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data old_cascades/cascade_019/ -vec pos.vec -bg neg.txt -w 24 -h 24 -precalcValBufSize 10000 -precalcIdxBufSize 10000 -numPos 110 -numNeg 100 -numStages 15 -maxFalseAlarmRate 0.15 -minHitRate 0.999999 > old_cascades/cascade_019/command.txt
 git add -A
 git commit -m "tweaking"
 git push
