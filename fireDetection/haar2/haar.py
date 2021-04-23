@@ -8,7 +8,7 @@ import numpy as np
 import sys 
 
 def draw_rectangles(frame, rectangles):
-    line_color = (0,255,0)
+    line_color = (255,255,0)
     line_type = cv.LINE_4
     for(x, y, w, h) in rectangles:
         top_left = (x,y)
@@ -60,6 +60,11 @@ def main():
 
         # Testing out cascade classifier
         rectangles = cascade_wildfire.detectMultiScale(frame)
+       
+        if(len(rectangles) > 0):
+            print("Fires detected: ", end='')
+            print(len(rectangles))
+        
         detection_image = draw_rectangles(frame, rectangles)
         cv.imshow('Cal Poly WEDS Fire Detection', frame)
 
