@@ -1,32 +1,37 @@
 <?xml version="1.0"?>
 <opencv_storage>
 <stage0>
-  <maxWeakCount>5</maxWeakCount>
-  <stageThreshold>-6.5324014425277710e-01</stageThreshold>
+  <maxWeakCount>6</maxWeakCount>
+  <stageThreshold>-1.0285656452178955e+00</stageThreshold>
   <weakClassifiers>
     <_>
       <internalNodes>
         0 -1 105031 -1.3862106204032898e-01</internalNodes>
       <leafValues>
-        9.2000001668930054e-01 -7.8181821107864380e-01</leafValues></_>
+        8.8976377248764038e-01 -8.0198019742965698e-01</leafValues></_>
     <_>
       <internalNodes>
-        0 -1 26676 6.6096849739551544e-02</internalNodes>
+        0 -1 952 5.4122477769851685e-02</internalNodes>
       <leafValues>
-        -6.5126258134841919e-01 8.2182776927947998e-01</leafValues></_>
+        -6.9428348541259766e-01 7.1054804325103760e-01</leafValues></_>
     <_>
       <internalNodes>
-        0 -1 49065 -4.3086811900138855e-02</internalNodes>
+        0 -1 126361 -2.0582202821969986e-02</internalNodes>
       <leafValues>
-        9.0768414735794067e-01 -4.1843247413635254e-01</leafValues></_>
+        8.2718420028686523e-01 -4.8807910084724426e-01</leafValues></_>
     <_>
       <internalNodes>
-        0 -1 14213 8.6095988750457764e-02</internalNodes>
+        0 -1 791 1.5039062500000000e-01</internalNodes>
       <leafValues>
-        -3.9921742677688599e-01 7.5280833244323730e-01</leafValues></_>
+        -4.1870027780532837e-01 8.9167851209640503e-01</leafValues></_>
     <_>
       <internalNodes>
-        0 -1 142827 -4.2927507311105728e-03</internalNodes>
+        0 -1 145335 6.8179577589035034e-02</internalNodes>
       <leafValues>
-        4.4546478986740112e-01 -7.7961462736129761e-01</leafValues></_></weakClassifiers></stage0>
+        -2.8803768754005432e-01 8.8624858856201172e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 90561 1.6698637045919895e-03</internalNodes>
+      <leafValues>
+        3.5213631391525269e-01 -9.5461809635162354e-01</leafValues></_></weakClassifiers></stage0>
 </opencv_storage>
