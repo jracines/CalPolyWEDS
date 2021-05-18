@@ -6,6 +6,7 @@ from picamera import PiCamera
 from time import time
 import numpy as np
 import sys 
+from  datetime import datetime
 
 def draw_rectangles(frame, rectangles):
     line_color = (255,255,0)
@@ -16,23 +17,29 @@ def draw_rectangles(frame, rectangles):
         cv.rectangle(frame, top_left, bottom_right, line_color, lineType=line_type)
     return frame
 
+
+parser = argparse.ArgumentParser(description="")
+parser.add_argument('--camera', help='Camera divide number.', type=int, default=0)
+args = parser.parse_args()
+camera_device = args.camera
+
 def main():
-    if(len(sys.argv) < 3):
-        print('Usage: python3 haar.py <cascade num> <footage num>')
-        exit()
+    # if(len(sys.argv) < 3):
+    #     print('Usage: python3 haar.py <cascade num> <footage num>')
+    #     exit()
     
-    cascade_num = sys.argv[1]
-    footage_num = sys.argv[2]
+    # cascade_num = sys.argv[1]
+    # footage_num = sys.argv[2]
 
     # # -- 2. Read the video stream (Raspberry Pi Camera)
-    # cap = cv.VideoCapture(camera_device)
-    # if not cap.isOpened:
-    #     print('--(!)Error opening video capture')
-    #     exit(0)
+    cap = cv.VideoCapture(camera_device)
+    if not cap.isOpened:
+        print('--(!)Error opening video capture')
+        exit(0)
 
     # Reading test raw video of wildfire
-    footage_path = "footage/raw_footage_"+str(footage_num)+".mp4"
-    cap = cv.VideoCapture(footage_path)
+    # footage_path = "footage/raw_footage_"+str(footage_num)+".mp4"
+    # cap = cv.VideoCapture(footage_path)
 
     # Error checking
     if not cap.isOpened():
@@ -41,9 +48,9 @@ def main():
     fps = cap.get(cv.CAP_PROP_FPS)
 
     # Opening cascade classifier
-    cascade_path = 'old_cascades/cascade_'+str(cascade_num)+'/cascade.xml'
-    # cascade_wildfire = cv.CascadeClassifier('cascade/cascade.xml')
-    cascade_wildfire = cv.CascadeClassifier(cascade_path)
+    # cascade_path = 'old_cascades/cascade_'+str(cascade_num)+'/cascade.xml'
+    cascade_wildfire = cv.CascadeClassifier('old_cascades/cascade_017/cascade.xml')
+    # cascade_wildfire = cv.CascadeClassifier(cascade_path)
 
     # Resize each image to this width and height
     width = 480
@@ -64,9 +71,12 @@ def main():
         if(len(rectangles) > 0):
             print("Fires detected: ", end='')
             print(len(rectangles))
-        
+       
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S") 
         detection_image = draw_rectangles(frame, rectangles)
-        cv.imshow('Cal Poly WEDS Fire Detection', frame)
+        # cv.imshow('Cal Poly WEDS Fire Detection', frame)
+        cv.imwrite("testphotos/"+current_time+".png",frame)
 
         key = cv.waitKey(1)
         if key == ord('q'):
