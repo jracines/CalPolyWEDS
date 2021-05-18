@@ -49,7 +49,7 @@ def main():
 
     # Opening cascade classifier
     # cascade_path = 'old_cascades/cascade_'+str(cascade_num)+'/cascade.xml'
-    cascade_wildfire = cv.CascadeClassifier('old_cascades/cascade_017/cascade.xml')
+    cascade_wildfire = cv.CascadeClassifier('old_cascades/cascade_019/cascade.xml')
     # cascade_wildfire = cv.CascadeClassifier(cascade_path)
 
     # Resize each image to this width and height
